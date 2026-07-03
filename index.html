@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erupify | Turn Your Online Reputation Into More Customers</title>
+    <meta name="description"
+        content="Help your business improve online reputation, collect more Google reviews, and attract more customers with Erupify.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header Navigation -->
+    <header id="header">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-logo">
+                <img src="https://i.postimg.cc/TPv927B8/erupify-Logo.png" alt="erupify">
+            </a>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#problem" data-i18n="nav-problem">The Problem</a>
+                <a href="#solution" data-i18n="nav-solution">Solution</a>
+                <a href="#how-it-works" data-i18n="nav-how-it-works">How It Works</a>
+                <a href="#pricing" data-i18n="nav-pricing">Pricing</a>
+                <a href="#tools" style="display: flex; align-items: center; gap: 6px;"><span
+                        data-i18n="nav-tools">Tools</span> <span
+                        style="background: var(--accent); color: #111; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 10px; text-transform: uppercase; line-height: 1;">New</span></a>
+                <a href="#contact" class="btn btn-primary mobile-only-btn" style="padding: 10px 20px; width: 100%;"
+                    data-i18n="nav-get-started">Start</a>
+            </nav>
+
+            <div class="header-actions">
+                <div class="nav-selector-container">
+                    <!-- Language Switcher -->
+                    <div class="nav-select-wrapper">
+                        <span class="nav-select-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                </path>
+                            </svg>
+                        </span>
+                        <select class="nav-select" id="lang-select" onchange="changeLanguage(this.value)"
+                            aria-label="Language">
+                            <option value="en">EN</option>
+                            <option value="ar">AR</option>
+                            <option value="fr">FR</option>
+                            <option value="es">ES</option>
+                        </select>
+                    </div>
+                    <!-- Currency Switcher -->
+                    <div class="nav-select-wrapper">
+                        <span class="nav-select-icon">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="12" y1="1" x2="12" y2="23"></line>
+                                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                            </svg>
+                        </span>
+                        <select class="nav-select" id="currency-select" onchange="changeCurrency(this.value)"
+                            aria-label="Currency">
+                            <option value="USD">USD ($)</option>
+                            <option value="MAD">MAD (DH)</option>
+                            <option value="EUR">EUR (€)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="desktop-only-btn" style="display: flex; align-items: center; gap: 10px;">
+                    <a href="auth/login.html" class="btn btn-secondary" style="padding: 9px 18px; font-size: 14px;">Login</a>
+                    <a href="auth/register.html" class="btn btn-primary" style="padding: 9px 18px; font-size: 14px;" data-i18n="nav-get-started">Get Started</a>
+                </div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-blob-1"></div>
+            <div class="hero-blob-2"></div>
+        </div>
+        <div class="container hero-content reveal-up">
+            <div class="value-prop" style="display: inline-flex; align-items: center; gap: 6px;"><span
+                    data-i18n="hero-value-prop">Turn your online reputation into a customer-acquisition machine</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z">
+                    </path>
+                    <path
+                        d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z">
+                    </path>
+                    <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+                    <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+                </svg>
+            </div>
+            <h1 data-i18n="hero-title">Turn Your Online Reputation Into More Customers</h1>
+            <p data-i18n="hero-desc">We help local businesses collect more Google Reviews effortlessly, build massive
+                trust, and rank higher on local search.</p>
+            <div class="hero-ctas">
+                <a href="auth/register.html" class="btn btn-primary" data-i18n="hero-demo">Start Free Today</a>
+                <a href="#demo" class="btn btn-secondary" data-i18n="hero-see-works">See How It Works ↓</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-bar-inner reveal-up">
+                <p class="trust-headline" data-i18n="trust-headline">Trusted by 100+ Local Businesses Across Morocco</p>
+                <div class="trust-logos">
+                    <!-- Google Rating -->
+                    <div class="trust-item">
+                        <div class="trust-item-logo">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="#4285F4"
+                                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+                                <path fill="#34A853"
+                                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+                                <path fill="#FBBC05"
+                                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+                                <path fill="#EA4335"
+                                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+                            </svg>
+                            Google
+                        </div>
+                        <div class="trust-stars">★★★★★</div>
+                        <span class="trust-rating">4.9/5 from 80+ reviews</span>
+                    </div>
+
+                    <div class="trust-divider"></div>
+
+                    <!-- Trustpilot Rating -->
+                    <div class="trust-item">
+                        <div class="trust-item-logo">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M12 2l2.9 8.9H24l-7.4 5.4 2.9 8.9L12 19.8l-7.4 5.4 2.9-8.9L0 10.9h9.1L12 2z"
+                                    fill="#00B67A" />
+                            </svg>
+                            Trustpilot
+                        </div>
+                        <div class="trust-stars">★★★★★</div>
+                        <span class="trust-rating">Excellent · 4.8/5</span>
+                    </div>
+
+                    <div class="trust-divider"></div>
+
+                    <!-- Stat: Businesses -->
+                    <div class="trust-stat">
+                        <div class="trust-stat-number">100+</div>
+                        <div class="trust-stat-label" data-i18n="trust-served">Businesses Served</div>
+                    </div>
+
+                    <div class="trust-divider"></div>
+
+                    <!-- Stat: Reviews Generated -->
+                    <div class="trust-stat">
+                        <div class="trust-stat-number">10,000+</div>
+                        <div class="trust-stat-label" data-i18n="trust-reviews">Reviews Generated</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section id="problem" class="section container">
+        <div class="text-center reveal-up">
+            <h2 class="mb-2" data-i18n="prob-title">Most Businesses Lose Customers Because of Weak Online Reputation
+            </h2>
+            <p style="color: var(--text-light);" data-i18n="prob-subtitle">Are you missing out on revenue because your
+                competitors look better online?</p>
+        </div>
+
+        <div class="problems-grid">
+            <div class="problem-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="problem-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="12" y1="8" x2="12" y2="12"></line>
+                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                    </svg>
+                </div>
+                <h3 data-i18n="prob-card1-title">Too few Google Reviews</h3>
+                <p style="color: var(--text-light); margin-top: 10px;" data-i18n="prob-card1-desc">Customers hesitate to
+                    trust a business with zero or barely any reviews. They simply go to the next option.</p>
+            </div>
+
+            <div class="problem-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="problem-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        <line x1="9" y1="10" x2="15" y2="10"></line>
+                    </svg>
+                </div>
+                <h3 data-i18n="prob-card2-title">Negative reviews hurt sales</h3>
+                <p style="color: var(--text-light); margin-top: 10px;" data-i18n="prob-card2-desc">A few bad ratings
+                    without a strong stream of positive ones can drastically lower your overall star rating.</p>
+            </div>
+
+            <div class="problem-card reveal-up" style="transition-delay: 0.3s;">
+                <div class="problem-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+                        <polyline points="17 6 23 6 23 12"></polyline>
+                    </svg>
+                </div>
+                <h3 data-i18n="prob-card3-title">Competitors ranking higher</h3>
+                <p style="color: var(--text-light); margin-top: 10px;" data-i18n="prob-card3-desc">Google favors
+                    businesses with high ratings and frequent new reviews in local search maps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section id="solution" class="solutions section">
+        <div class="container">
+            <div class="text-center reveal-up">
+                <h2 class="mb-2" data-i18n="sol-title">How Erupify Helps Your Business Grow</h2>
+                <p style="color: var(--text-light);" data-i18n="sol-subtitle">We automate your review collection so you
+                    can focus on running your business.</p>
+            </div>
+
+            <div class="solutions-grid">
+                <div class="solution-item reveal-up">
+                    <div class="solution-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+                            </polygon>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="sol-card1-title">Collect Reviews Easily</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;" data-i18n="sol-card1-desc">Never beg for
+                            reviews again. We provide simple tools that make it incredibly easy for customers to leave
+                            5-star feedback.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item reveal-up" style="transition-delay: 0.1s;">
+                    <div class="solution-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="sol-card2-title">Redirect Happy Customers</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;" data-i18n="sol-card2-desc">Our smart
+                            routing sends satisfied customers straight to Google, while capturing poor feedback
+                            privately before it goes online.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item reveal-up" style="transition-delay: 0.2s;">
+                    <div class="solution-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="sol-card3-title">Build Massive Trust</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;" data-i18n="sol-card3-desc">Stand out in
+                            your local area with a glowing reputation that naturally attracts new clients reading your
+                            amazing reviews.</p>
+                    </div>
+                </div>
+
+                <div class="solution-item reveal-up" style="transition-delay: 0.3s;">
+                    <div class="solution-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 data-i18n="sol-card4-title">Improve Local SEO</h3>
+                        <p style="color: var(--text-light); margin-top: 8px;" data-i18n="sol-card4-desc">More reviews
+                            mean higher rankings on Google Maps, driving massive amounts of organic, free foot traffic
+                            to your door.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="section container">
+        <div class="text-center reveal-up">
+            <h2 class="mb-2" data-i18n="how-title">Automate Your Reputation in 3 Steps</h2>
+            <p style="color: var(--text-light);" data-i18n="how-subtitle">We make it frictionless for your customers and
+                entirely hands-off for you.</p>
+        </div>
+
+        <div class="steps-grid">
+            <!-- Line connecting steps -->
+            <div style="position: absolute; top: 32px; left: 16%; right: 16%; height: 2px; background: var(--border); z-index: 0;"
+                class="hide-mobile"></div>
+
+            <div class="step-card reveal-up">
+                <div class="step-number">01</div>
+                <h3 data-i18n="how-step1-title">Smart Page Setup</h3>
+                <p style="color: var(--text-light);" data-i18n="how-step1-desc">We create a beautifully designed,
+                    branded landing page optimized to convert your customers into reviewers.</p>
+            </div>
+
+            <div class="step-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="step-number">02</div>
+                <h3 data-i18n="how-step2-title">Share With Customers</h3>
+                <p style="color: var(--text-light);" data-i18n="how-step2-desc">Customers scan a QR code at your
+                    location or click a link sent via SMS/Email after their purchase.</p>
+            </div>
+
+            <div class="step-card reveal-up" style="transition-delay: 0.4s;">
+                <div class="step-number">03</div>
+                <h3 data-i18n="how-step3-title">Watch Reviews Grow</h3>
+                <p style="color: var(--text-light);" data-i18n="how-step3-desc">Happy clients tap easily to leave 5-star
+                    Google reviews, skyrocketing your online rating instantly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section container">
+        <div class="text-center reveal-up">
+            <h2 class="mb-2" data-i18n="tools-title">Interactive Growth Tools</h2>
+            <p style="color: var(--text-light);" data-i18n="tools-subtitle">Free calculators and assessments to measure
+                your digital performance and automation savings.</p>
+        </div>
+
+        <div class="tools-grid">
+            <!-- Card 1: Pricing Calculator -->
+            <div class="tool-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="15" y2="9"></line>
+                        <line x1="9" y1="13" x2="15" y2="13"></line>
+                        <line x1="9" y1="17" x2="15" y2="17"></line>
+                        <line x1="9" y1="5" x2="9" y2="5.01"></line>
+                        <line x1="15" y1="5" x2="15" y2="5.01"></line>
+                    </svg>
+                </div>
+                <h3 data-i18n="tools-card1-title">Pricing Calculator</h3>
+                <p data-i18n="tools-card1-desc">Calculate your customized pricing plan based on locations and add-ons.
+                </p>
+                <button type="button" class="btn btn-secondary" onclick="openToolModal('pricingCalcModal')"
+                    data-i18n="tools-card1-btn">Calculate Plan</button>
+            </div>
+
+            <!-- Card 2: Business Digital Score -->
+            <div class="tool-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h3 data-i18n="tools-card2-title">Business Digital Score</h3>
+                <p data-i18n="tools-card2-desc">Evaluate your business digital automation maturity with our 20-question
+                    quiz.</p>
+                <button type="button" class="btn btn-secondary" onclick="openToolModal('digitalScoreModal')"
+                    data-i18n="tools-card2-btn">Take Assessment</button>
+            </div>
+
+            <!-- Card 3: ROI Calculator -->
+            <div class="tool-card reveal-up" style="transition-delay: 0.3s;">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="1" x2="12" y2="23"></line>
+                        <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                    </svg>
+                </div>
+                <h3 data-i18n="tools-card3-title">ROI Calculator</h3>
+                <p data-i18n="tools-card3-desc">Estimate the profit growth and time saved by automating customer
+                    reviews.</p>
+                <button type="button" class="btn btn-secondary" onclick="openToolModal('roiCalcModal')"
+                    data-i18n="tools-card3-btn">Calculate ROI</button>
+            </div>
+
+            <!-- Card 4: AI Assistant Cost Calculator -->
+            <div class="tool-card reveal-up" style="transition-delay: 0.4s;">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        <path d="M9 15h6"></path>
+                    </svg>
+                </div>
+                <h3 data-i18n="tools-card4-title">AI Assistant Cost Calculator</h3>
+                <p data-i18n="tools-card4-desc">Compare the cost of human staff vs an AI Agent handling messages &
+                    calls.</p>
+                <button type="button" class="btn btn-secondary" onclick="openToolModal('aiAssistantModal')"
+                    data-i18n="tools-card4-btn">Compare Cost</button>
+            </div>
+
+            <!-- Card 5: Review Cost Calculator -->
+            <div class="tool-card reveal-up" style="transition-delay: 0.5s;">
+                <div class="tool-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                    </svg>
+                </div>
+                <h3 data-i18n="tools-card5-title">Review Cost Calculator</h3>
+                <p data-i18n="tools-card5-desc">Calculate how much buying reviews costs vs using Erupify, and see your monthly & annual savings.</p>
+                <button type="button" class="btn btn-secondary" onclick="openToolModal('reviewCostModal')"
+                    data-i18n="tools-card5-btn">Calculate Savings</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container reveal-up">
+            <div class="demo-wrapper">
+                <div class="demo-content">
+                    <h2 class="mb-3">See It In Action</h2>
+                    <p class="mb-4" style="font-size: 18px; line-height: 1.8; max-width: 500px;">
+                        This is exactly what your customers will see. A frictionless, mobile-optimized experience
+                        designed to capture positive sentiment and turn it into public praise.
+                    </p>
+                    <ul style="margin-bottom: 32px;">
+                        <li style="display: flex; gap: 12px; margin-bottom: 16px; align-items: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Custom branded with your logo
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 16px; align-items: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Direct link to your Google Business Profile
+                        </li>
+                        <li style="display: flex; gap: 12px; margin-bottom: 16px; align-items: center;">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--secondary)"
+                                stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                            </svg>
+                            Links to your social media & website
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn btn-primary" style="background: white; color: #111111;">Get Your
+                        Custom Page</a>
+                </div>
+
+                <!-- Phone Mockup wrapped with flanking arrows -->
+                <div class="phone-mockup-wrap">
+                    <!-- Left Arrow -->
+                    <button class="theme-arrow" onclick="slideTheme(-1)">&#8592;</button>
+
+                    <!-- Phone -->
+                    <div class="phone-mockup">
+                        <div class="phone-notch"></div>
+
+                        <!-- Theme Carousel -->
+                        <div class="theme-carousel">
+                            <div class="theme-track" id="themeTrack">
+
+                                <!-- Theme 1 — ضع رابط الصورة الأولى هنا -->
+                                <div class="theme-slide-img">
+                                    <img src="https://i.postimg.cc/PxvVGBbJ/er1.jpg" alt="Theme 1 - Dark Orange">
+                                </div>
+
+                                <!-- Theme 2 — ضع رابط الصورة الثانية هنا -->
+                                <div class="theme-slide-img">
+                                    <img src="https://i.postimg.cc/j2z82PFT/er2.jpg" alt="Theme 2 - Dark Purple">
+                                </div>
+
+                                <!-- Theme 3 — ضع رابط الصورة الثالثة هنا -->
+                                <div class="theme-slide-img">
+                                    <img src="https://i.postimg.cc/Cxm7wtRF/t.jpg" alt="Theme 3 - Light Teal">
+                                </div>
+
+                                <!-- Theme 4 — ضع رابط الصورة الرابعة هنا -->
+                                <div class="theme-slide-img">
+                                    <img src="https://i.postimg.cc/3RDFCxnh/y.jpg" alt="Theme 4 - Light Rose">
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Dots overlay at bottom of phone -->
+                        <div class="phone-dots-bar" id="themeDots"></div>
+                    </div>
+
+                    <!-- Right Arrow -->
+                    <button class="theme-arrow" onclick="slideTheme(1)">&#8594;</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section container">
+        <div class="text-center reveal-up">
+            <h2 class="mb-2" data-i18n="testim-title">Trusted by Local Businesses</h2>
+            <p style="color: var(--text-light);" data-i18n="testim-subtitle">See how Erupify has transformed our clients' online presence.</p>
+        </div>
+
+        <div class="testimonials-grid">
+            <div class="testimonial-card reveal-up">
+                <div class="stars">★★★★★</div>
+                <p data-i18n="testim-1-text">"Before Erupify, we had 12 reviews. Within 3 months of placing their QR codes on our tables, we hit
+                    over 150 5-star reviews. Our foot traffic has never been better!"</p>
+                <div class="client-info">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Marco Rossi" class="client-avatar">
+                    <div>
+                        <h4 style="font-size: 16px; margin-bottom: 2px;">Marco Rossi</h4>
+                        <p style="font-size: 13px; color: var(--text-light);" data-i18n="testim-1-role">Owner of Bella Pizza</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal-up" style="transition-delay: 0.1s;">
+                <div class="stars">★★★★★</div>
+                <p data-i18n="testim-2-text">"As a dental clinic, trust is everything. Erupify automates our review requests perfectly. We now
+                    rank #1 on Google Maps for 'Dentist near me' in our city."</p>
+                <div class="client-info">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Sarah Jenkins"
+                        class="client-avatar">
+                    <div>
+                        <h4 style="font-size: 16px; margin-bottom: 2px;">Dr. Sarah Jenkins</h4>
+                        <p style="font-size: 13px; color: var(--text-light);" data-i18n="testim-2-role">Manager at Bright Smiles Clinic</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonial-card reveal-up" style="transition-delay: 0.2s;">
+                <div class="stars">★★★★★</div>
+                <p data-i18n="testim-3-text">"The negative feedback capture is a lifesaver. It lets me fix a client's issue privately before it
+                    ever hits Google. Erupify is an absolute game changer."</p>
+                <div class="client-info">
+                    <img src="https://randomuser.me/api/portraits/men/46.jpg" alt="David Chen" class="client-avatar">
+                    <div>
+                        <h4 style="font-size: 16px; margin-bottom: 2px;">David Chen</h4>
+                        <p style="font-size: 13px; color: var(--text-light);" data-i18n="testim-3-role">Real Estate Agent at Prime Realty</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section container">
+        <div class="text-center reveal-up">
+            <h2 class="mb-2" data-i18n="price-title">Simple, Transparent Pricing</h2>
+            <p style="color: var(--text-light);" data-i18n="price-subtitle">Invest in your reputation and watch your ROI
+                explode.</p>
+        </div>
+
+        <!-- Billing Toggle -->
+        <div class="billing-toggle reveal-up">
+            <button id="btn-monthly" class="toggle-btn" onclick="setBilling('monthly')"
+                data-i18n="price-monthly">Monthly</button>
+            <button id="btn-annual" class="toggle-btn active" onclick="setBilling('annual')">
+                <span data-i18n="price-annual">Annual</span>
+                <span id="annual-badge" class="annual-save-badge" data-i18n="price-save">Save 20%</span>
+            </button>
+        </div>
+
+        <div class="pricing-grid">
+            <!-- Starter -->
+            <div class="pricing-card reveal-up" data-monthly="7">
+                <h3>Starter</h3>
+                <p style="color: var(--text-light); font-size: 14px; margin-top: 8px;" data-i18n="price-starter-desc">
+                    For small local businesses.</p>
+                <div class="price">
+                    <span class="price-amount">$588</span>
+                    <span class="price-period"
+                        style="font-size: 16px; color: var(--text-light); font-weight: 400;">/yr</span>
+                </div>
+                <div class="price-note"></div>
+                <ul class="pricing-features">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-starter-f1">Basic review page setup</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-starter-f2">Direct Google linking</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-starter-f3">Standard QR Code</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-starter-f4">Email Support</span></li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary" style="width: 100%;" data-i18n="price-starter-btn">Get
+                    Starter</a>
+                <p class="guarantee-note"
+                    style="display: flex; align-items: center; justify-content: center; gap: 6px;"><svg width="14"
+                        height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg> <span data-i18n="guar-2-title">Cancel anytime · No contracts</span></p>
+            </div>
+
+            <!-- Business -->
+            <div class="pricing-card popular reveal-up" style="transition-delay: 0.1s;" data-monthly="25">
+                <div class="popular-badge" data-i18n="price-popular">Most Popular</div>
+                <h3>Business</h3>
+                <p style="color: var(--text-light); font-size: 14px; margin-top: 8px;" data-i18n="price-business-desc">
+                    For growing establishments.</p>
+                <div class="price">
+                    <span class="price-amount">$1,188</span>
+                    <span class="price-period"
+                        style="font-size: 16px; color: var(--text-light); font-weight: 400;">/yr</span>
+                </div>
+                <div class="price-note"></div>
+                <ul class="pricing-features">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-business-f1">Advanced review system</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-business-f2">Negative feedback capture</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-business-f3">Custom branded QR Code</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-business-f4">Monthly analytics report</span></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary" style="width: 100%;" data-i18n="price-business-btn">Get
+                    Business</a>
+                <p class="guarantee-note"
+                    style="color: var(--accent); display: flex; align-items: center; justify-content: center; gap: 6px;">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg> <span data-i18n="guar-1-title">14-Day Money-Back Guarantee</span>
+                </p>
+            </div>
+
+            <!-- Pro -->
+            <div class="pricing-card reveal-up" style="transition-delay: 0.2s;" data-monthly="129">
+                <h3>Pro</h3>
+                <p style="color: var(--text-light); font-size: 14px; margin-top: 8px;" data-i18n="price-pro-desc">Full
+                    reputation management.</p>
+                <div class="price">
+                    <span class="price-amount">$2,388</span>
+                    <span class="price-period"
+                        style="font-size: 16px; color: var(--text-light); font-weight: 400;">/yr</span>
+                </div>
+                <div class="price-note"></div>
+                <ul class="pricing-features">
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-pro-f1">Everything in Business</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-pro-f2">SMS/Email API Integrations</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-pro-f3">Automated review replies</span></li>
+                    <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg> <span data-i18n="price-pro-f4">Priority 24/7 Support</span></li>
+                </ul>
+                <a href="#contact" class="btn btn-secondary" style="width: 100%;" data-i18n="price-pro-btn">Get Pro</a>
+                <p class="guarantee-note"
+                    style="display: flex; align-items: center; justify-content: center; gap: 6px;"><svg width="14"
+                        height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                    </svg> <span data-i18n="guar-2-title">Cancel anytime · No contracts</span></p>
+            </div>
+        </div>
+
+        <!-- Guarantee Banner -->
+        <div class="guarantee-banner reveal-up">
+            <div class="guarantee-item">
+                <span class="guarantee-icon" style="display: flex; align-items: center; justify-content: center;"><svg
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg></span>
+                <div>
+                    <strong data-i18n="guar-1-title">14-Day Money-Back Guarantee</strong>
+                    <span data-i18n="guar-1-desc">Not satisfied? Full refund, no questions asked.</span>
+                </div>
+            </div>
+            <div class="guarantee-sep"></div>
+            <div class="guarantee-item">
+                <span class="guarantee-icon" style="display: flex; align-items: center; justify-content: center;"><svg
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                        <path d="M7 11V7a5 5 0 0 1 9.9-1"></path>
+                    </svg></span>
+                <div>
+                    <strong data-i18n="guar-2-title">No Long-Term Contracts</strong>
+                    <span data-i18n="guar-2-desc">Cancel anytime, stay because you love the results.</span>
+                </div>
+            </div>
+            <div class="guarantee-sep"></div>
+            <div class="guarantee-item">
+                <span class="guarantee-icon" style="display: flex; align-items: center; justify-content: center;"><svg
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                    </svg></span>
+                <div>
+                    <strong data-i18n="guar-3-title">Setup in 24 Hours</strong>
+                    <span data-i18n="guar-3-desc">We handle everything. You just approve it.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section container">
+        <div class="text-center reveal-up">
+            <h2 class="mb-2" data-i18n="faq-title">Frequently Asked Questions</h2>
+            <p style="color: var(--text-light);" data-i18n="faq-subtitle">Got questions? We've got answers.</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-item reveal-up">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span data-i18n="faq-q1">Is this compliant with Google's Terms of Service?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq-a1">Absolutely! We never create fake reviews or incentivize customers to leave positive feedback. Our system simply makes it easier for your real, satisfied customers to share their experience on Google. This is 100% compliant with Google's guidelines.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal-up" style="transition-delay: 0.05s;">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span data-i18n="faq-q2">Do I need to be tech-savvy to use Erupify?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq-a2">Not at all! We handle the entire setup for you. Once your branded page and QR code are ready, all you need to do is share them with your customers — no technical knowledge required. It's as simple as showing a QR code or sending a link.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal-up" style="transition-delay: 0.1s;">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span data-i18n="faq-q3">How does Erupify separate negative feedback from positive reviews?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq-a3">Our smart routing system asks customers about their experience first. Happy customers are directed straight to your Google review page. Unhappy customers are routed to a private feedback form instead, giving you the chance to resolve issues before they become public negative reviews.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal-up" style="transition-delay: 0.15s;">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span data-i18n="faq-q4">How quickly will I see results?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq-a4">Most of our clients start seeing new 5-star reviews within the first week. Within 2-3 months, you can expect a significant boost in your overall Google rating and local search ranking, leading to more foot traffic and sales.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal-up" style="transition-delay: 0.2s;">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span data-i18n="faq-q5">Can I cancel my subscription at any time?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq-a5">Yes! There are no long-term contracts. You can cancel your subscription at any time. However, most of our clients stay because they see a clear and measurable return on investment from day one.</div>
+                </div>
+            </div>
+
+            <div class="faq-item reveal-up" style="transition-delay: 0.25s;">
+                <button class="faq-question" onclick="toggleFaq(this)">
+                    <span data-i18n="faq-q6">What if I already have negative reviews on Google?</span>
+                    <span class="faq-icon">+</span>
+                </button>
+                <div class="faq-answer">
+                    <div class="faq-answer-inner" data-i18n="faq-a6">That's exactly why you need Erupify! By generating a consistent stream of new positive reviews, your overall star rating will improve quickly. The negative reviews get buried under an avalanche of genuine 5-star feedback from happy customers.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta reveal-up">
+        <h2 data-i18n="cta-title">Start Growing Your Reputation Today</h2>
+        <p data-i18n="cta-desc"
+            style="color: var(--text-light); font-size: 18px; margin-bottom: 32px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Stop losing customers to competitors with better reviews. Join the smart businesses automating their growth.
+        </p>
+        <div class="hero-ctas">
+            <a href="#demo" class="btn btn-primary" data-i18n="cta-btn1">Get Your Demo</a>
+            <a href="#contact" class="btn btn-secondary" data-i18n="cta-btn2">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer & Contact -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-center-content reveal-up">
+                <a href="#" class="footer-logo">
+                    <img src="https://i.postimg.cc/TPv927B8/erupify-Logo.png" alt="Erupify">
+                </a>
+                <p class="footer-text" data-i18n="footer-desc">Turn your online reputation into a powerful customer-acquisition machine. Collect reviews, build trust, and dominate local search.</p>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/erupify2026/" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61575374527595" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                            </path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="https://api.whatsapp.com/send/?phone=212631645817" aria-label="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path
+                                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a href="mailto:erupify@proton.me" aria-label="Email">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                            </path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                &copy; <span id="year"></span> Erupify. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+
+    <!-- Lead Gen Modal -->
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-header">
+                <h3>Get Your Free Demo</h3>
+                <p>Fill out the form below and we'll be in touch shortly.</p>
+            </div>
+            <form id="leadForm" class="modal-form" onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="name" data-i18n="modal-name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="business" data-i18n="modal-business">Business Name</label>
+                    <input type="text" id="business" placeholder="The Best Cafe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email" data-i18n="modal-email">Email Address</label>
+                    <input type="email" id="email" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone" data-i18n="modal-phone">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" placeholder="+212 600 000 000">
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">Get My Free
+                    Demo</button>
+            </form>
+            <div id="formSuccess" class="form-success" style="display: none;">
+                <div class="success-icon">✓</div>
+                <h4>Thank You!</h4>
+                <p>Your request has been received. Our team will contact you within 24 hours.</p>
+                <button type="button" class="btn btn-secondary" onclick="closeModal()"
+                    style="width: 100%; margin-top: 16px;" data-i18n="modal-success-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing Calculator Modal -->
+    <div id="pricingCalcModal" class="modal-overlay">
+        <div class="modal-container wide">
+            <button class="modal-close" onclick="closeToolModal('pricingCalcModal')">&times;</button>
+            <div class="modal-header">
+                <h3 data-i18n="tools-card1-title">Pricing Calculator</h3>
+                <p data-i18n="tools-card1-desc">Calculate your customized pricing plan based on locations and add-ons.
+                </p>
+            </div>
+            <div class="modal-grid">
+                <div class="tool-inputs-panel">
+                    <div class="slider-group">
+                        <div class="slider-label-wrap">
+                            <span data-i18n="calc-locations">Number of Locations</span>
+                            <span id="locations-value">1</span>
+                        </div>
+                        <input type="range" id="locations-slider" min="1" max="10" value="1" class="slider-input"
+                            oninput="updatePricingCalculation()">
+                    </div>
+
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="addon-feedback" onchange="updatePricingCalculation()">
+                            <span data-i18n="calc-addon1">Private Feedback Capture (+29/mo)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="addon-qr" onchange="updatePricingCalculation()">
+                            <span data-i18n="calc-addon2">Branded QR Pack (+19/mo)</span>
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" id="addon-ai" onchange="updatePricingCalculation()">
+                            <span data-i18n="calc-addon3">AI Review Responder (+49/mo)</span>
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pricing-cycle" data-i18n="calc-billing">Billing Cycle</label>
+                        <select id="pricing-cycle" class="nav-select" style="width: 100%; padding-left: 12px;"
+                            onchange="updatePricingCalculation()">
+                            <option value="monthly" data-i18n="price-monthly">Monthly</option>
+                            <option value="annual" data-i18n="price-annual" selected>Annual (20% Discount)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="tool-results-panel">
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="calc-plan-type">Recommended Plan</div>
+                        <div id="calc-plan-name"
+                            style="font-size: 20px; font-weight: 700; color: white; margin-top: 5px;">Starter</div>
+                    </div>
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="calc-total-cost">Total Price</div>
+                        <div class="tool-result-value" id="calc-total-price">$39</div>
+                        <div id="calc-period-label" style="font-size: 13px; color: var(--text-light);">/ month</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Business Digital Score Modal -->
+    <div id="digitalScoreModal" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" onclick="closeToolModal('digitalScoreModal')">&times;</button>
+            <div class="modal-header">
+                <h3 data-i18n="tools-card2-title">Business Digital Score</h3>
+                <p data-i18n="tools-card2-desc">Evaluate your business digital automation maturity with our 20-question
+                    quiz.</p>
+            </div>
+
+            <div id="quiz-intro-step">
+                <p style="color: var(--text-light); text-align: center; margin-bottom: 24px;"
+                    data-i18n="quiz-intro-desc">Take this quick 20-question assessment to analyze your business
+                    digitalization and find automation bottlenecks.</p>
+                <button type="button" class="btn btn-primary" style="width: 100%;" onclick="startQuiz()"
+                    data-i18n="tools-card2-btn">Take Assessment</button>
+            </div>
+
+            <div id="quiz-question-step" style="display: none;">
+                <div class="quiz-progress-bar">
+                    <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+                </div>
+                <div style="font-size: 13px; color: var(--text-light); margin-bottom: 8px; font-weight: 600;"
+                    id="quiz-progress-text">Question 1 of 20</div>
+                <div class="quiz-question-card">
+                    <h4 id="quiz-question-text">Do you have a website?</h4>
+                </div>
+                <div class="quiz-btns-row">
+                    <button type="button" class="quiz-btn yes" onclick="answerQuiz(true)"
+                        data-i18n="quiz-yes">Yes</button>
+                    <button type="button" class="quiz-btn no" onclick="answerQuiz(false)"
+                        data-i18n="quiz-no">No</button>
+                </div>
+            </div>
+
+            <div id="quiz-lead-step" style="display: none;">
+                <p style="color: var(--text-light); margin-bottom: 20px; text-align: center;"
+                    data-i18n="quiz-lead-desc">Enter your details to generate your score report and automation
+                    recommendations.</p>
+                <form id="quizLeadForm" onsubmit="submitQuizForm(event)">
+                    <div class="form-group">
+                        <label for="quiz-name" data-i18n="modal-name">Full Name</label>
+                        <input type="text" id="quiz-name" placeholder="John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quiz-email" data-i18n="modal-email">Email Address</label>
+                        <input type="email" id="quiz-email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quiz-phone" data-i18n="modal-phone">Phone Number</label>
+                        <input type="tel" id="quiz-phone" placeholder="+212 600 000 000" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;"
+                        data-i18n="quiz-view-results">Get Digital Report</button>
+                </form>
+            </div>
+
+            <div id="quiz-result-step" style="display: none; text-align: center;">
+                <div class="quiz-score-circle">
+                    <div class="quiz-score-number" id="quiz-score-num">0/100</div>
+                    <div class="quiz-score-text" data-i18n="quiz-score-label">Your Score</div>
+                </div>
+                <h4 style="font-size: 18px; margin-bottom: 16px;" id="quiz-result-headline">Score Message</h4>
+                <p style="color: var(--text-light); font-size: 14px; margin-bottom: 24px;" data-i18n="quiz-losing-msg">
+                    Your business is losing potential customers due to missing automation systems.</p>
+                <button type="button" class="btn btn-secondary" style="width: 100%;"
+                    onclick="closeToolModal('digitalScoreModal')" data-i18n="modal-success-btn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROI Calculator Modal -->
+    <div id="roiCalcModal" class="modal-overlay">
+        <div class="modal-container wide">
+            <button class="modal-close" onclick="closeToolModal('roiCalcModal')">&times;</button>
+            <div class="modal-header">
+                <h3 data-i18n="tools-card3-title">ROI Calculator</h3>
+                <p data-i18n="tools-card3-desc">Estimate the profit growth and time saved by automating customer
+                    reviews.</p>
+            </div>
+            <div class="modal-grid">
+                <div class="tool-inputs-panel">
+                    <div class="form-group">
+                        <label for="roi-clients" data-i18n="roi-lbl-clients">Monthly Customers</label>
+                        <input type="number" id="roi-clients" value="200" oninput="calculateRoi()">
+                    </div>
+                    <div class="form-group">
+                        <label for="roi-conversion" data-i18n="roi-lbl-conversion">Current Review Rate (%)</label>
+                        <input type="number" id="roi-conversion" value="5" min="1" max="100" oninput="calculateRoi()">
+                    </div>
+                    <div class="form-group">
+                        <label for="roi-profit" data-i18n="roi-lbl-profit">Average Value per Customer</label>
+                        <input type="number" id="roi-profit" value="50" oninput="calculateRoi()">
+                    </div>
+                </div>
+
+                <div class="tool-results-panel">
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="roi-out-profit">Additional Annual Revenue</div>
+                        <div class="tool-result-value" id="roi-result-revenue">$1,800</div>
+                    </div>
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="roi-out-time">Time Saved (Annually)</div>
+                        <div class="tool-result-value" id="roi-result-time" style="color: var(--secondary);">600 hrs
+                        </div>
+                    </div>
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="roi-out-rate">Estimated Annual ROI</div>
+                        <div class="tool-result-value" id="roi-result-percent" style="color: #10B981;">151%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Assistant Cost Calculator Modal -->
+    <div id="aiAssistantModal" class="modal-overlay">
+        <div class="modal-container wide">
+            <button class="modal-close" onclick="closeToolModal('aiAssistantModal')">&times;</button>
+            <div class="modal-header">
+                <h3 data-i18n="tools-card4-title">AI Assistant Cost Calculator</h3>
+                <p data-i18n="tools-card4-desc">Compare the cost of human staff vs an AI Agent handling messages &
+                    calls.</p>
+            </div>
+            <div class="modal-grid">
+                <div class="tool-inputs-panel">
+                    <div class="form-group">
+                        <label for="ai-messages" data-i18n="ai-lbl-messages">Daily Messages</label>
+                        <input type="number" id="ai-messages" value="100" oninput="calculateAiSavings()">
+                    </div>
+                    <div class="form-group">
+                        <label for="ai-calls" data-i18n="ai-lbl-calls">Daily Calls</label>
+                        <input type="number" id="ai-calls" value="20" oninput="calculateAiSavings()">
+                    </div>
+                    <div class="form-group">
+                        <label for="ai-employees" data-i18n="ai-lbl-employees">Number of Support Employees</label>
+                        <input type="number" id="ai-employees" value="2" oninput="calculateAiSavings()">
+                    </div>
+                </div>
+
+                <div class="tool-results-panel">
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="ai-out-human">Staff Cost (Annual)</div>
+                        <div class="tool-result-value" id="ai-result-human" style="color: #EF4444;">$12,000</div>
+                    </div>
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="ai-out-agent">AI Agent Cost (Annual)</div>
+                        <div class="tool-result-value" id="ai-result-agent" style="color: var(--secondary);">$4,472
+                        </div>
+                    </div>
+                    <div class="tool-result-box">
+                        <div class="tool-result-label" data-i18n="ai-out-savings">Net Savings (Annual)</div>
+                        <div class="tool-result-value" id="ai-result-savings" style="color: #10B981;">$7,528</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Cost Calculator Modal -->
+    <div id="reviewCostModal" class="modal-overlay">
+        <div class="modal-container wide">
+            <button class="modal-close" onclick="closeToolModal('reviewCostModal')">&times;</button>
+            <div class="modal-header">
+                <h3 data-i18n="tools-card5-title">Review Cost Calculator</h3>
+                <p data-i18n="tools-card5-desc">Calculate how much buying reviews costs vs using Erupify, and see your monthly & annual savings.</p>
+            </div>
+            <div class="modal-grid">
+                <div class="tool-inputs-panel">
+                    <div class="form-group">
+                        <label for="rc-visitors" data-i18n="rc-lbl-visitors">Daily Customers</label>
+                        <input type="number" id="rc-visitors" value="20" min="1" oninput="calculateReviewCost()">
+                    </div>
+                    <div class="form-group">
+                        <label for="rc-days" data-i18n="rc-lbl-days">Working Days per Month</label>
+                        <input type="number" id="rc-days" value="30" min="1" max="31" oninput="calculateReviewCost()">
+                    </div>
+                    <div class="form-group">
+                        <label for="rc-price" data-i18n="rc-lbl-price">Price per Review</label>
+                        <input type="number" id="rc-price" value="5" min="1" oninput="calculateReviewCost()">
+                    </div>
+
+                    <!-- ROI moved under inputs -->
+                    <div class="tool-result-box" style="margin-top: 24px; padding: 20px; background: rgba(255, 152, 0, 0.05); border: 1px solid var(--border); border-radius: var(--radius-md); text-align: center;">
+                        <div class="tool-result-label" data-i18n="rc-out-roi" style="font-size: 14px;">ROI</div>
+                        <div class="tool-result-value" id="rc-roi" style="color: var(--accent); font-size: 36px; margin: 5px 0 0 0;">203%</div>
+                    </div>
+                </div>
+
+                <div class="tool-results-panel" style="padding: 24px;">
+                    <!-- Row 1: Reviews -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; border-bottom: 1px dashed var(--border); padding-bottom: 16px;">
+                        <div class="tool-result-box" style="margin: 0; padding: 0; border: none;">
+                            <div class="tool-result-label" data-i18n="rc-out-monthly-reviews">Monthly Reviews</div>
+                            <div class="tool-result-value" id="rc-monthly-reviews" style="color: var(--primary); font-size: 24px; margin: 5px 0;">600</div>
+                        </div>
+                        <div class="tool-result-box" style="margin: 0; padding: 0; border: none;">
+                            <div class="tool-result-label" data-i18n="rc-out-annual-reviews">Annual Reviews</div>
+                            <div class="tool-result-value" id="rc-annual-reviews" style="color: var(--primary); font-size: 24px; margin: 5px 0;">7,200</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Cost -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; border-bottom: 1px dashed var(--border); padding-bottom: 16px;">
+                        <div class="tool-result-box" style="margin: 0; padding: 0; border: none;">
+                            <div class="tool-result-label" data-i18n="rc-out-monthly-cost">Buying Reviews (Monthly)</div>
+                            <div class="tool-result-value" id="rc-monthly-cost" style="color: #EF4444; font-size: 24px; margin: 5px 0;">3,000 DH</div>
+                        </div>
+                        <div class="tool-result-box" style="margin: 0; padding: 0; border: none;">
+                            <div class="tool-result-label" data-i18n="rc-out-annual-cost">Buying Reviews (Annual)</div>
+                            <div class="tool-result-value" id="rc-annual-cost" style="color: #EF4444; font-size: 24px; margin: 5px 0;">36,000 DH</div>
+                        </div>
+                    </div>
+
+                    <!-- Row 3: Savings -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div class="tool-result-box" style="margin: 0; padding: 0; border: none;">
+                            <div class="tool-result-label" data-i18n="rc-out-monthly-saving">Erupify Monthly Savings</div>
+                            <div class="tool-result-value" id="rc-monthly-saving" style="color: #10B981; font-size: 24px; margin: 5px 0;">2,010 DH</div>
+                        </div>
+                        <div class="tool-result-box" style="margin: 0; padding: 0; border: none;">
+                            <div class="tool-result-label" data-i18n="rc-out-annual-saving">Erupify Annual Savings</div>
+                            <div class="tool-result-value" id="rc-annual-saving" style="color: #10B981; font-size: 24px; margin: 5px 0;">24,120 DH</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

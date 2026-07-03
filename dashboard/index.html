@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark-orange">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard — Erupify</title>
+  <meta name="description" content="Manage your Google reviews, view reports, and customise your page — all in one place.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+<!-- Mobile sidebar overlay -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- Mobile toggle button -->
+<button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle menu">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <line x1="3" y1="12" x2="21" y2="12"></line>
+    <line x1="3" y1="6" x2="21" y2="6"></line>
+    <line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</button>
+
+<div class="dashboard-layout">
+
+  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+      <a href="../index.html" class="sidebar-logo">
+        <img src="https://i.postimg.cc/TPv927B8/erupify-Logo.png" alt="Erupify">
+      </a>
+    </div>
+
+    <div class="sidebar-user">
+      <div class="user-avatar" id="user-avatar">E</div>
+      <div class="user-info">
+        <div class="user-name" id="user-business">Your Business</div>
+        <div class="user-plan" id="user-plan">Free Plan</div>
+      </div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="nav-section-label">Main</div>
+
+      <button class="nav-item active" data-section="overview" id="nav-overview">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="3" width="7" height="7" rx="1"></rect>
+          <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+          <rect x="14" y="14" width="7" height="7" rx="1"></rect>
+        </svg>
+        Overview
+      </button>
+
+      <button class="nav-item" data-section="reviews" id="nav-reviews">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        Reviews
+      </button>
+
+      <button class="nav-item" data-section="reports" id="nav-reports">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"></line>
+          <line x1="12" y1="20" x2="12" y2="4"></line>
+          <line x1="6" y1="20" x2="6" y2="14"></line>
+        </svg>
+        Reports
+      </button>
+
+      <div class="nav-section-label">Customise</div>
+
+      <button class="nav-item" data-section="themes" id="nav-themes">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        Themes
+      </button>
+
+      <button class="nav-item" data-section="settings" id="nav-settings">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="3"></circle>
+          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+        </svg>
+        Settings
+      </button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <button class="logout-btn" id="logout-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+          <polyline points="16 17 21 12 16 7"></polyline>
+          <line x1="21" y1="12" x2="9" y2="12"></line>
+        </svg>
+        Sign Out
+      </button>
+    </div>
+  </aside>
+
+  <!-- ═══════════════ MAIN ═══════════════ -->
+  <main class="main-content">
+
+    <!-- Top bar -->
+    <div class="topbar">
+      <div class="topbar-title" id="topbar-title">Overview</div>
+      <div class="topbar-right">
+        <span class="topbar-date" id="topbar-date"></span>
+        <button class="icon-btn" title="Notifications" aria-label="Notifications">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- ══════ OVERVIEW SECTION ══════ -->
+    <section class="page-section active" id="section-overview">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Good morning! 👋</div>
+          <div class="section-subtitle" id="overview-greeting">Here's what's happening with your reviews today.</div>
+        </div>
+        <button class="btn btn-accent" id="add-review-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Add Review
+        </button>
+      </div>
+
+      <!-- KPI Cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+          </div>
+          <div class="kpi-value" id="kpi-total">—</div>
+          <div class="kpi-label">Total Google Reviews</div>
+          <span class="kpi-change up" id="kpi-total-change">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            +0 this month
+          </span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+            </svg>
+          </div>
+          <div class="kpi-value" id="kpi-avg">—</div>
+          <div class="kpi-label">Average Rating</div>
+          <span class="kpi-change up" id="kpi-avg-change">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            Excellent
+          </span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+          </div>
+          <div class="kpi-value" id="kpi-month">—</div>
+          <div class="kpi-label">Reviews This Month</div>
+          <span class="kpi-change up" id="kpi-month-change">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            vs last month
+          </span>
+        </div>
+
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline>
+              <polyline points="16 7 22 7 22 13"></polyline>
+            </svg>
+          </div>
+          <div class="kpi-value" id="kpi-growth">—</div>
+          <div class="kpi-label">Growth Rate</div>
+          <span class="kpi-change up" id="kpi-growth-change">
+            <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="18 15 12 9 6 15"></polyline></svg>
+            Month over month
+          </span>
+        </div>
+      </div>
+
+      <!-- Charts -->
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-title">Reviews Over Time</div>
+            <div class="chart-period">Last 6 months</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="line-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-title">Rating Distribution</div>
+            <div class="chart-period">All time</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="donut-chart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent reviews mini-table -->
+      <div class="table-card">
+        <div class="table-card-header">
+          <span class="table-card-title">Recent Reviews</span>
+          <button class="btn btn-outline" onclick="switchSection('reviews')">View All</button>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Reviewer</th>
+                <th>Rating</th>
+                <th>Review</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="recent-reviews-body">
+              <tr><td colspan="4" class="empty-state"><p>Loading reviews…</p></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ REVIEWS SECTION ══════ -->
+    <section class="page-section" id="section-reviews">
+      <div class="section-header">
+        <div>
+          <div class="section-title">All Reviews</div>
+          <div class="section-subtitle">Manage and track all your Google reviews</div>
+        </div>
+        <button class="btn btn-accent" id="add-review-btn-2">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+          Add Review
+        </button>
+      </div>
+
+      <div class="filter-bar" style="margin-bottom: 20px;">
+        <select class="filter-select" id="filter-rating">
+          <option value="">All Ratings</option>
+          <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+          <option value="4">⭐⭐⭐⭐ 4 Stars</option>
+          <option value="3">⭐⭐⭐ 3 Stars</option>
+          <option value="2">⭐⭐ 2 Stars</option>
+          <option value="1">⭐ 1 Star</option>
+        </select>
+        <select class="filter-select" id="filter-period">
+          <option value="">All Time</option>
+          <option value="7">Last 7 days</option>
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 3 months</option>
+        </select>
+      </div>
+
+      <div class="table-card">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Reviewer</th>
+                <th>Rating</th>
+                <th>Review</th>
+                <th>Source</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="all-reviews-body">
+              <tr><td colspan="5"><div class="empty-state"><p>Loading…</p></div></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ REPORTS SECTION ══════ -->
+    <section class="page-section" id="section-reports">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Reports & Analytics</div>
+          <div class="section-subtitle">Deep insights into your review performance</div>
+        </div>
+        <button class="btn btn-outline" id="export-csv-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Export CSV
+        </button>
+      </div>
+
+      <div class="kpi-grid" style="margin-bottom: 28px;">
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+          </div>
+          <div class="kpi-value" id="rep-best-month">—</div>
+          <div class="kpi-label">Best Month</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          </div>
+          <div class="kpi-value" id="rep-avg-per-month">—</div>
+          <div class="kpi-label">Avg. Reviews / Month</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+          <div class="kpi-value" id="rep-five-star">—</div>
+          <div class="kpi-label">5-Star Reviews</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.28a2 2 0 0 0 2-1.7l1.38-9a2 2 0 0 0-2-2.3H14z"></path><path d="M7 22H4a2 2 0 0 1-2-2v-7a2 2 0 0 1 2-2h3"></path></svg>
+          </div>
+          <div class="kpi-value" id="rep-satisfaction">—</div>
+          <div class="kpi-label">Satisfaction Rate</div>
+        </div>
+      </div>
+
+      <div class="charts-grid">
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-title">Monthly Review Volume</div>
+            <div class="chart-period">Last 12 months</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="bar-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-card">
+          <div class="chart-card-header">
+            <div class="chart-title">Rating Breakdown</div>
+            <div class="chart-period">All time</div>
+          </div>
+          <div class="chart-wrapper">
+            <canvas id="hbar-chart"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════ THEMES SECTION ══════ -->
+    <section class="page-section" id="section-themes">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Choose Your Theme</div>
+          <div class="section-subtitle">Personalise your dashboard experience</div>
+        </div>
+        <button class="btn btn-accent" id="save-theme-btn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"></path><polyline points="17 21 17 13 7 13 7 21"></polyline><polyline points="7 3 7 8 15 8"></polyline></svg>
+          Save Theme
+        </button>
+      </div>
+
+      <div class="themes-grid" id="themes-grid">
+
+        <!-- Dark Orange -->
+        <div class="theme-card selected" data-theme="dark-orange"
+             style="background:#1A1A1A; border-color: #FF9800;">
+          <div class="theme-preview">
+            <div class="theme-swatch" style="background:#FF9800;"></div>
+            <div class="theme-swatch" style="background:#242424;"></div>
+            <div class="theme-swatch" style="background:#0F0F0F;"></div>
+          </div>
+          <div class="theme-name" style="color:#E5E7EB;">🔥 Dark Orange</div>
+          <div class="theme-desc" style="color:#9CA3AF;">Default · Bold & energetic</div>
+        </div>
+
+        <!-- Dark Blue -->
+        <div class="theme-card" data-theme="dark-blue"
+             style="background:#111827; border-color:#1F2D45;">
+          <div class="theme-preview">
+            <div class="theme-swatch" style="background:#3B82F6;"></div>
+            <div class="theme-swatch" style="background:#1A2235;"></div>
+            <div class="theme-swatch" style="background:#0A0F1E;"></div>
+          </div>
+          <div class="theme-name" style="color:#E2E8F0;">🌊 Dark Blue</div>
+          <div class="theme-desc" style="color:#94A3B8;">Cool & professional</div>
+        </div>
+
+        <!-- Dark Purple -->
+        <div class="theme-card" data-theme="dark-purple"
+             style="background:#171523; border-color:#2D2A45;">
+          <div class="theme-preview">
+            <div class="theme-swatch" style="background:#A855F7;"></div>
+            <div class="theme-swatch" style="background:#1E1B2E;"></div>
+            <div class="theme-swatch" style="background:#0D0B14;"></div>
+          </div>
+          <div class="theme-name" style="color:#EDE9FE;">💜 Dark Purple</div>
+          <div class="theme-desc" style="color:#A78BFA;">Creative & premium</div>
+        </div>
+
+        <!-- Light Clean -->
+        <div class="theme-card" data-theme="light-clean"
+             style="background:#FFFFFF; border-color:#E0E0E0;">
+          <div class="theme-preview">
+            <div class="theme-swatch" style="background:#FF9800;"></div>
+            <div class="theme-swatch" style="background:#F3F4F6;"></div>
+            <div class="theme-swatch" style="background:#E5E7EB;"></div>
+          </div>
+          <div class="theme-name" style="color:#111827;">☀️ Light Clean</div>
+          <div class="theme-desc" style="color:#6B7280;">Minimal & clean</div>
+        </div>
+
+        <!-- Dark Green -->
+        <div class="theme-card" data-theme="dark-green"
+             style="background:#0F1E1C; border-color:#1E3D38;">
+          <div class="theme-preview">
+            <div class="theme-swatch" style="background:#10B981;"></div>
+            <div class="theme-swatch" style="background:#152723;"></div>
+            <div class="theme-swatch" style="background:#071110;"></div>
+          </div>
+          <div class="theme-name" style="color:#D1FAE5;">🌿 Dark Green</div>
+          <div class="theme-desc" style="color:#6EE7B7;">Nature & growth</div>
+        </div>
+
+      </div>
+
+      <p style="font-size:13px; color:var(--text-muted);">
+        Click a theme to preview it instantly. Hit <strong>Save Theme</strong> to keep it for future sessions.
+      </p>
+    </section>
+
+    <!-- ══════ SETTINGS SECTION ══════ -->
+    <section class="page-section" id="section-settings">
+      <div class="section-header">
+        <div>
+          <div class="section-title">Settings</div>
+          <div class="section-subtitle">Manage your account and business details</div>
+        </div>
+      </div>
+
+      <!-- Business info -->
+      <div class="settings-card">
+        <div class="settings-title">Business Information</div>
+        <div class="form-field">
+          <label for="s-business">Business Name</label>
+          <input type="text" id="s-business" placeholder="My Awesome Business">
+        </div>
+        <div class="form-field">
+          <label for="s-place-id">Google Place ID
+            <span style="font-size:11px; color:var(--text-muted); margin-left:6px;">
+              <a href="https://developers.google.com/maps/documentation/places/web-service/place-id" target="_blank" style="color:var(--accent);">Find yours →</a>
+            </span>
+          </label>
+          <input type="text" id="s-place-id" placeholder="ChIJN1t_tDeuEmsRUsoyG83frY4">
+        </div>
+        <button class="btn btn-accent" id="save-profile-btn">Save Changes</button>
+      </div>
+
+      <!-- Change password -->
+      <div class="settings-card">
+        <div class="settings-title">Change Password</div>
+        <div class="form-field">
+          <label for="s-new-pass">New Password</label>
+          <input type="password" id="s-new-pass" placeholder="Min. 8 characters">
+        </div>
+        <div class="form-field">
+          <label for="s-confirm-pass">Confirm New Password</label>
+          <input type="password" id="s-confirm-pass" placeholder="Repeat password">
+        </div>
+        <button class="btn btn-accent" id="change-pass-btn">Update Password</button>
+      </div>
+
+      <!-- Danger zone -->
+      <div class="danger-zone">
+        <div class="danger-title">⚠️ Danger Zone</div>
+        <div class="danger-text">Deleting your account is permanent and cannot be undone. All your data will be lost.</div>
+        <button class="btn-danger" id="delete-account-btn">Delete Account</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- Add Review Modal -->
+<div id="review-modal" style="
+  display:none; position:fixed; inset:0; z-index:1000;
+  background:rgba(0,0,0,0.6); backdrop-filter:blur(4px);
+  align-items:center; justify-content:center; padding:20px;">
+  <div style="
+    background:var(--surface); border:1px solid var(--border);
+    border-radius:20px; padding:32px; width:100%; max-width:480px;
+    animation: slideUp 0.3s ease;">
+    <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:24px;">
+      <h2 style="font-family:'Space Grotesk',sans-serif; font-size:18px; font-weight:700;">Add New Review</h2>
+      <button id="close-modal" style="background:none; border:none; color:var(--text-light); cursor:pointer;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    <div class="form-field">
+      <label for="m-name">Reviewer Name</label>
+      <input type="text" id="m-name" placeholder="John Smith">
+    </div>
+    <div class="form-field">
+      <label for="m-rating">Rating</label>
+      <select id="m-rating" class="filter-select" style="width:100%; padding:11px 16px;">
+        <option value="5">⭐⭐⭐⭐⭐ 5 Stars</option>
+        <option value="4">⭐⭐⭐⭐ 4 Stars</option>
+        <option value="3">⭐⭐⭐ 3 Stars</option>
+        <option value="2">⭐⭐ 2 Stars</option>
+        <option value="1">⭐ 1 Star</option>
+      </select>
+    </div>
+    <div class="form-field">
+      <label for="m-text">Review Text (optional)</label>
+      <textarea id="m-text" placeholder="Great service, highly recommend!" rows="3"
+        style="width:100%; padding:11px 16px; background:var(--surface-2); border:1px solid var(--border);
+               border-radius:10px; color:var(--text); font-family:'Inter',sans-serif; font-size:14px;
+               outline:none; resize:vertical;"></textarea>
+    </div>
+    <div class="form-field">
+      <label for="m-date">Review Date</label>
+      <input type="date" id="m-date">
+    </div>
+    <button class="btn btn-accent" style="width:100%; padding:13px; justify-content:center; font-size:14px;" id="save-review-btn">
+      Save Review
+    </button>
+  </div>
+</div>
+
+<script type="module" src="dashboard.js"></script>
+</body>
+</html>
