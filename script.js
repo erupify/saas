@@ -836,7 +836,7 @@
             };
 
             // ── Pricing Toggle ──────────────────────────────────────
-            const ANNUAL_DISCOUNT = 20;
+            const ANNUAL_DISCOUNT = 10;
             window.currentBillingMode = 'annual';
 
             window.setBilling = function (mode) {
